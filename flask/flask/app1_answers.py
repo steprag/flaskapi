@@ -4,22 +4,22 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return "<b>Hello pretty girl!</b>"
+    return "Hello!"
 
 @app.route("/morning")
 def good_morning():
     return "Good morning!"
 
 @app.route("/evening/<firstname>")
-def evening(firstname):
-    return f"Good evening, {firstname}!"
+def good_evening(firstname="John"):
+    return f"Good evening {firstname}!"
 
 @app.route("/greetings/<period_of_day>/<firstname>")
 def greetings(period_of_day, firstname):
     return f"Good {period_of_day}, {firstname}!"
 
 @app.route("/add/<int:first>/<int:second>")
-def add(first, second):
+def sum(first, second):
     return str(first + second)
 
 @app.route("/afternoon")
